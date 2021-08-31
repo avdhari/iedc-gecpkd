@@ -1,0 +1,14 @@
+{% extends 'website/base.html' %}
+
+{% block title %}
+    {{event.title}} | IEDC GEC Palakkad
+{% endblock %}
+
+
+{% block content %}
+
+<h2>{{event.title}}</h2>
+<p>{{event.content}}</p>
+<a href="{{event.register}}" target="_blank">Register</a>
+
+{% endblock %}
