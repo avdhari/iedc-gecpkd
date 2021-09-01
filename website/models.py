@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Event(models.Model):
@@ -7,7 +6,7 @@ class Event(models.Model):
     content = models.TextField()
     register = models.CharField(max_length=200)
     # flyer = models.ImageField()
-    date_created = models.DateTimeField(auto_now_add=timezone.now)
+    date_created = models.DateTimeField(auto_now_add=True)
     event_date = models.DateTimeField(auto_now=False)
 
     def __str__(self):
