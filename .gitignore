@@ -4,3 +4,8 @@ __pycache__
 
 
 # database
+*.sqlite3
+
+# local dirs
+media/
+staticfiles/
