@@ -92,6 +92,10 @@ DATABASES = {
 
         'PASSWORD': 'askme',
 
+        'HOST': 'localhost',
+
+
+
     }
 
 }
