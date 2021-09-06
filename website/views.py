@@ -20,3 +20,7 @@ def event_view(request, pk):
         "event": event,
     }
     return render(request, 'website/event_detail.html', context)
+
+
+def about_view(request):
+    return render(request, 'website/about.html')
