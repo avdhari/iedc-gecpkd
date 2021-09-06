@@ -12,6 +12,14 @@
 <img src="{{event.flyer.url}}" alt="HustleChats#1" class="event-flyer">
 
 <br><br>
-<a class="btn btn-primary" href="{{event.register}}" target="_blank">Register</a>
+{% if event.event_is_live %}
+<a class="btn btn-sm btn-success" href="{{event.register}}" target="_blank">Register</a>
+{% else %}
+<a class="btn btn-sm btn-secondary" href="#" disabled>Registration Closed</a>
+{% endif %}
+
+{% if event.is_hustle_chat %}
+<a class="btn btn-sm btn-outline-primary" href="{{event.yt_link}}" target="_blank">Watch This Episode</a>
+{% endif %}
 
 {% endblock %}

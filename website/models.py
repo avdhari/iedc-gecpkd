@@ -9,6 +9,9 @@ class Event(models.Model):
     flyer = models.ImageField(blank=False)
     date_created = models.DateTimeField(auto_now_add=True)
     event_date = models.DateTimeField(auto_now=False)
+    event_is_live = models.BooleanField()
+    is_hustle_chat = models.BooleanField(default=False)
+    yt_link = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
         return self.title

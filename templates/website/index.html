@@ -10,7 +10,12 @@ Home | IEDC GEC Palakkad
 
     <a href="{% url 'event-view' event.pk %}">{{event.title}}</a>
     <p>{{event.content}}</p>
+    {% if event.event_is_live %}
     <a class="btn btn-sm btn-success" href="{{event.register}}" target="_blank">Register</a>
+    {% else %}
+    <a class="btn btn-sm btn-secondary" href="#" disabled>Registration Closed</a>
+    {% endif %}
+
     <br><br>
     <hr>
 
