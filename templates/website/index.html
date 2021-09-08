@@ -9,11 +9,21 @@ Home | IEDC GEC Palakkad
 {% for event in events %}
 
     <a href="{% url 'event-view' event.pk %}">{{event.title}}</a>
-    <p>{{event.content}}</p>
+    <br>
+    <small>{{event.event_date}}</small>
+    <p>{{event.content | truncatechars:255}}</p>
+    <br>
+    <img src="{{event.flyer.url}}" class="flyer">
+    <br><br>
+    
     {% if event.event_is_live %}
     <a class="btn btn-sm btn-success" href="{{event.register}}" target="_blank">Register</a>
     {% else %}
     <a class="btn btn-sm btn-secondary" href="#" disabled>Registration Closed</a>
+    {% endif %}
+
+    {% if event.is_hustle_chat %}
+    <a class="btn btn-sm btn-outline-primary" href="{{event.yt_link}}" target="_blank">Watch This Episode</a>
     {% endif %}
 
     <br><br>

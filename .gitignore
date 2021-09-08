@@ -9,3 +9,6 @@ __pycache__
 # local dirs
 media/
 staticfiles/
+
+# local files
+test_code.txt
