@@ -13,7 +13,8 @@ Home | IEDC GEC Palakkad
     <small>{{event.event_date}}</small>
     <p>{{event.content | truncatechars:255}}</p>
     <br>
-    <img src="{{event.flyer.url}}" class="flyer">
+    <!-- <img src="{{event.flyer.url}}" class="flyer"> -->
+    <img src="{{ event.flyer }}" class="flyer">
     <br><br>
     
     {% if event.event_is_live %}

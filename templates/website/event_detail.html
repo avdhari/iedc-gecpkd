@@ -10,8 +10,8 @@
 <strong><h2>{{event.title}}</h2></strong>
 <small>{{event.event_date}}</small>
 <p>{{event.content}}</p>
-<img src="{{event.flyer.url}}" alt="HustleChats#1" class="event-flyer">
-
+<!-- <img src="{{event.flyer.url}}" alt="HustleChats#1" class="event-flyer"> -->
+<img src="{{event.flyer}}" alt="HustleChats#1" class="event-flyer">
 <br><br>
 {% if event.event_is_live %}
 <a class="btn btn-sm btn-success" href="{{event.register}}" target="_blank">Register</a>
