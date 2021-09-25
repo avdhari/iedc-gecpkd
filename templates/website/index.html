@@ -1,4 +1,5 @@
 {% extends 'website/base.html' %}
+{% load index %}
 
 {% block title %}
 Home | IEDC GEC Palakkad
@@ -8,15 +9,14 @@ Home | IEDC GEC Palakkad
 
 {% for event in events %}
 
-    <a href="{% url 'event-view' event.pk %}">{{event.title}}</a>
+    <a href="{% url 'event-view' event.slug %}">{{event.title}}</a>
     <br>
     <small>{{event.event_date}}</small>
     <p>{{event.content | truncatechars:255}}</p>
     <br>
     <!-- <img src="{{event.flyer.url}}" class="flyer"> -->
-    <img src="{{ event.flyer }}" class="flyer">
+    <img src="{{ links_list|index:forloop.counter0 }}" class="flyer">
     <br><br>
-    
     {% if event.event_is_live %}
     <a class="btn btn-sm btn-success" href="{{event.register}}" target="_blank">Register</a>
     {% else %}
