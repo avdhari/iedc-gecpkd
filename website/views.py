@@ -9,11 +9,10 @@ def base_view(request):
 
 def home_view(request):
     events = Event.objects.all().order_by('-event_date')
-    event = Event.objects.all()
-    list_events = list(event)
-    event_count = len(list_events)
+    list_events = list(events)
+    event_count = Event.objects.all().count()
     links_list = []
-    for i in range(0, event_count):
+    for i in range(event_count):
         img_url = image_url_split(list_events[i].flyer)
         links_list.append(img_url)
     context = {
