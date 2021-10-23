@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import *
+from website.models import Event
 from website.tasks import image_url_split
 
 

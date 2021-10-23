@@ -1,5 +1,4 @@
 from django import template
-from website.models import *
 
 register = template.Library()
 

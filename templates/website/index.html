@@ -8,6 +8,7 @@ Home | IEDC GEC Palakkad
 {% block content %}
 
 {% for event in events %}
+    {% if event.is_removed is False %}
 
     <a href="{% url 'event-view' event.slug %}">{{event.title}}</a>
     <br>
@@ -29,6 +30,6 @@ Home | IEDC GEC Palakkad
 
     <br><br>
     <hr>
-
+    {% endif %}
 {% endfor %}
 {% endblock %}

@@ -1,7 +1,5 @@
-from website.models import Event
 from django.contrib import admin
-from django.contrib.admin.decorators import display
-from .models import Event
+from website.models import Event
 
 
 class DisplayEvent(admin.ModelAdmin):
