@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Event
+from website.models import Event, HustleChat
 from website.tasks import image_url_split
 
 
@@ -34,3 +34,11 @@ def event_view(request, slug):
 
 def about_view(request):
     return render(request, 'website/about.html')
+
+
+def hustle_chats(request):
+    videos = HustleChat.objects.all()
+    context = {
+        'videos': videos,
+    }
+    return render(request, 'website/hustle_chats.html', context)

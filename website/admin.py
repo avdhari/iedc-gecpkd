@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Event
+from website.models import Event, HustleChat
 
 
 class DisplayEvent(admin.ModelAdmin):
@@ -7,3 +7,4 @@ class DisplayEvent(admin.ModelAdmin):
 
 
 admin.site.register(Event, DisplayEvent)
+admin.site.register(HustleChat)

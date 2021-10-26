@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+{% load embed_video_tags %}
+{% block title %}
+    Hustle Chats | IEDC GEC Palakkad
+{% endblock %}
+
+{% block content %}
+
+<h1>Hustle Chats</h1>
+
+{% for video in videos %}
+<h3>Episode {{video.episode}}: {{video.name_of_guest}}</h3>
+{% video video.video 'small' %}
+{% endfor %}
+
+{% endblock %}

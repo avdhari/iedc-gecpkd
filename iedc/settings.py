@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # custom apps go here
     'website',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
