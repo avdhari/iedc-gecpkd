@@ -1,5 +1,7 @@
 from django.db import models
+from django.db.models.base import Model
 from django.utils.text import slugify
+from embed_video.fields import EmbedVideoField
 
 
 class Event(models.Model):
@@ -22,3 +24,12 @@ class Event(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Event, self).save(*args, **kwargs)
+
+
+class HustleChat(models.Model):
+    name_of_guest = models.CharField(blank=True, max_length=250)
+    episode = models.IntegerField()
+    video = EmbedVideoField()
+
+    def __str__(self):
+        return "Episode " + str(self.episode) + ": " + self.name_of_guest
