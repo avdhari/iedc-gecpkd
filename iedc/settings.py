@@ -12,23 +12,27 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rwuhsmgc0-j+@^ufz0#(!*udtpw!)h60p9@$z9hd(pzwk7)zlg'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['iedc-gecpkd.herokuapp.com', '127.0.0.1', 'iedctest.herokuapp.com']
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['iedc-gecpkd.herokuapp.com'])
 
 
 # Application definition
@@ -86,18 +90,7 @@ WSGI_APPLICATION = 'iedc.wsgi.application'
 
 DATABASES = {
 
-    'default': {
-
-        'ENGINE': 'django.db.backends.postgresql',
-
-        'NAME': 'iedc',
-
-        'USER': 'avdhari',
-
-        'PASSWORD': 'askme',
-
-        'HOST': 'localhost',
-    }
+    'default': env.db(),
 
 }
 
