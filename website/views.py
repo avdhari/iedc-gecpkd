@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Event, HustleChat
+from website.models import *
 from website.tasks import image_url_split
 
 
@@ -33,7 +33,13 @@ def event_view(request, slug):
 
 
 def about_view(request):
-    return render(request, 'website/about.html')
+    nodal_officer = NodalOfficer.objects.all()
+    team_members = TeamMember.objects.all()
+    context = {
+        'nodal_officer': nodal_officer,
+        'team_members': team_members,
+    }
+    return render(request, 'website/about.html', context)
 
 
 def hustle_chats(request):

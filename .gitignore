@@ -12,3 +12,5 @@ staticfiles/
 
 # local files
 test_code.txt
+
+.env

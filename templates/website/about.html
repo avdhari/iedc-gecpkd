@@ -1,10 +1,32 @@
 {% extends 'website/base.html' %}
 
+{% block title %}
+    About | IEDC GEC Palakkad
+{% endblock %}
 
 
 {% block content %}
 
 <h1>about</h1>
+{% for faculty in nodal_officer %}
+
+<h4>{{faculty.name}}</h4>
+<img src="{{faculty.profile_image}}" alt="" class="profile-img">
+<a href="{{faculty.linkedin_url}}" target="_blank">LinkedIn</a>
+
+{% endfor %}
+
+
+{% for lead in team_members %}
+
+<h4>{{lead.name}}</h4>
+
+<img src="{{lead.profile_image}}" alt="" class="profile-img">
+<a href="{{lead.linkedin_url}}" target="_blank">LinkedIn</a>
+
+
+{% endfor %}
 
 
 {% endblock %}
+
