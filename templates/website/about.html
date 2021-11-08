@@ -8,6 +8,7 @@
 {% block content %}
 
 <h1>about</h1>
+<br>
 {% for faculty in nodal_officer %}
 
 <h4>{{faculty.name}}</h4>
@@ -17,16 +18,61 @@
 {% endfor %}
 
 
-{% for lead in team_members %}
-
-<h4>{{lead.name}}</h4>
-
-<img src="{{lead.profile_image}}" alt="" class="profile-img">
-<a href="{{lead.linkedin_url}}" target="_blank">LinkedIn</a>
-
-
+{% for member in team_members %}
+    {% if member.position == 'Student Lead' %}
+    <h4>{{member.position}}</h4>
+    <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
 {% endfor %}
 
 
+{% for member in team_members %}
+    {% if member.position == 'Technology Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
+
+{% for member in team_members %}
+    {% if member.position == 'Quality and Operations Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
+{% for member in team_members %}
+    {% if member.position == 'Community Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
+{% for member in team_members %}
+    {% if member.position == 'Creative and Innovations Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
+{% for member in team_members %}
+    {% if member.position == 'Finance Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
+{% for member in team_members %}
+    {% if member.position == 'Branding and Marketing Lead' %}
+        <h4>{{member.position}}</h4>
+        <img src="{{member.profile_image}}" alt="" class="profile-img">
+    {% endif %}
+{% endfor %}
+
 {% endblock %}
+
+
+
+
+
 

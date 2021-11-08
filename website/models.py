@@ -1,8 +1,8 @@
 from django.db import models
-from django.db.models.aggregates import Max
 from django.utils.text import slugify
 from embed_video.fields import EmbedVideoField
 from website.tasks import image_url_split
+
 
 class BaseModel(models.Model):
     class Meta:
@@ -41,7 +41,6 @@ class HustleChat(BaseModel):
         return "Episode " + str(self.episode) + ": " + self.name_of_guest
 
 
-
 class NodalOfficer(BaseModel):
     name = models.CharField(max_length=200)
     profile_image = models.URLField()
@@ -51,7 +50,6 @@ class NodalOfficer(BaseModel):
 
     def __str__(self):
         return self.name
-
 
     def save(self, *args, **kwargs):
         self.profile_image = image_url_split(self.profile_image)
